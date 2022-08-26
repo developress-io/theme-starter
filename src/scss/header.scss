@@ -1,22 +1,28 @@
 .header {
 }
 
+header {
+	background: black;
+	width: 100%;
+	height: 100px;
+}
+
 @include min-size(md) {
-  .header {
-  }
+	.header {
+	}
 }
 
 @include min-size(lg) {
-  .header {
-  }
+	.header {
+	}
 }
 
 @include min-size(xl) {
-  .header {
-  }
+	.header {
+	}
 }
 
 @include min-size(xxl) {
-  .header {
-  }
+	.header {
+	}
 }

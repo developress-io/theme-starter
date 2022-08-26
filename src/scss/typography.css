@@ -1,0 +1,44 @@
+h1,
+.h1 {
+  font-family: var(--font-monospace);
+  font-weight: bold;
+}
+
+h2,
+.h2 {
+  font-family: var(--font-monospace);
+  font-weight: bold;
+}
+
+h2__link,
+.h2__link {
+  text-decoration: none;
+  margin-right: 2rem;
+  position: relative;
+  display: block;
+}
+
+h3,
+.h3 {
+  font-family: var(--font-monospace);
+  font-weight: bold;
+}
+
+h4,
+.h4 {
+  font-family: var(--font-monospace);
+  font-weight: bold;
+}
+
+h5,
+.h5 {
+  font-family: var(--font-monospace);
+  font-weight: bold;
+}
+
+h6,
+.h6 {
+  font-family: var(--font-monospace);
+  font-weight: bold;
+}
+/*# sourceMappingURL=typography.css.map */
