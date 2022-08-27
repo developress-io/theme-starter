@@ -1,6 +1,8 @@
 <?php
 require_once 'inc/classes/class-theme.php';
 require_once 'inc/helpers/svg.php';
+new Theme();
+
 
 //Menus
 register_nav_menus(
@@ -9,7 +11,6 @@ register_nav_menus(
 		'footer-menu' => __( 'My Custom Footer Menu' ),
     ]
 );
-
 
 // team members
 
@@ -22,7 +23,7 @@ register_nav_menus(
 		'labels'            => [
 			'name'          => 'Departaments',
 			'singular_name' => 'departament',
-			   
+
 		],
 		'hierarchical'      => true,
 		'show_ui'           => true,
@@ -34,9 +35,9 @@ register_nav_menus(
 		'hierarchical'      => true,
 		'rewrite'           => [ 'slug' => 'teams' ],
 	];
-	register_taxonomy( 'departaments', [ 'teams' ], $args );     
+	register_taxonomy( 'departaments', [ 'teams' ], $args );
 }
 
 	add_action( 'init', 'departament_taxonomy' );
-*/ 
-new Theme();
+*/
+

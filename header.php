@@ -14,21 +14,16 @@
 <header>
 	<?php
 	wp_nav_menu(
-			array(
+			[
 					'theme_location' => 'main-menu',
-	)
+					'menu'           => 'main-menu',
+					'menu_class'     => 'footer-menu',
+	]
 );
 	?>
 </header>
 
 
 <body <?php body_class(); ?> style="opacity: 0;">
-
-<div class="header">
-	<div class="header__links">
-		<?php wp_nav_menu( [ 'theme_location' => 'Header' ] ); ?>
-	</div>
-</div>
-
 <?php
 wp_body_open();
