@@ -1,10 +1,9 @@
 <?php
 require_once 'inc/classes/class-theme.php';
 require_once 'inc/helpers/svg.php';
-new Theme();
 
 
-//Menus
+// Menus
 register_nav_menus(
 	[
 		'main-menu' => __( 'My Custom Main Menu' ),
@@ -12,32 +11,44 @@ register_nav_menus(
     ]
 );
 
-// team members
+// Team Members
+function team_members()
+{
 
+	$args  = array(
 
-//
+		'labels'  => array(
+			'name' => 'Members',
+			'singular_name' => 'Member',
+		),
+		'hierarchical' => true,
+		'public' =>  true,
+		'has_archive' => true,
+		'menu_icon' => 'dashicons-businessperson',
+		'support' => array('title', 'editor', 'thumbnail'),
 
-/* function departament_taxonomy() {
+	);
 
-	$args = [
-		'labels'            => [
-			'name'          => 'Departaments',
-			'singular_name' => 'departament',
+	register_post_type('Members', $args);
 
-		],
-		'hierarchical'      => true,
-		'show_ui'           => true,
-		'show_in_rest'      => true,
-		'show_admin_column' => true,
-		'has_archive'       => true,
-		'query_var'         => true,
-		'public'            => true,
-		'hierarchical'      => true,
-		'rewrite'           => [ 'slug' => 'teams' ],
-	];
-	register_taxonomy( 'departaments', [ 'teams' ], $args );
+}
+add_action('init', 'team_members');
+
+// Taxonomy
+function department_taxonomy()
+{
+
+	$args = array(
+		'labels' => array(
+			'name' => 'Departments',
+			'singular_name' => 'Department',
+		),
+		'public' => true,
+		'hierarchical' => true,
+	);
+	register_taxonomy( 'Departments', array( 'members' ), $args);
 }
 
-	add_action( 'init', 'departament_taxonomy' );
-*/
+	add_action( 'init', 'department_taxonomy' );
 
+new Theme();
