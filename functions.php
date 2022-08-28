@@ -1,7 +1,7 @@
 <?php
 require_once 'inc/classes/class-theme.php';
 require_once 'inc/helpers/svg.php';
-
+new Theme();
 
 // Menus
 register_nav_menus(
@@ -51,4 +51,41 @@ function department_taxonomy()
 
 	add_action( 'init', 'department_taxonomy' );
 
-new Theme();
+// Filter excerpt length
+add_filter('excerpt_length', 'custom_excerpt_length');
+function custom_excerpt_length( $length ) {
+	$length = 25;
+	return $length;
+}
+
+
+
+// Action secret page
+add_action('template_redirect', 'members_only');
+function members_only() {
+	do_action('user_redirected', date("F j, Y, g:i a"));
+	if( is_page('secret') && ! is_user_logged_in() ) {
+		wp_redirect( home_url() );
+		die();
+	}
+}
+
+add_action('user_redirected', 'log_when_accessed');
+function log_when_accessed( $date ) {
+
+	$access_log = get_stylesheet_directory() . '/access_log.txt';
+	$message = 'someone has just tried to access the secret page on ' . $date;
+
+	if ( file_exists ( $access_log)) {
+		$file = fopen ( $access_log, 'a');
+		fwrite($file, $message."\n");
+
+	} else {
+
+		$file = fopen( $access_log, 'w' );
+		fwrite( $file, $message."\n");
+	}
+
+	fclose($file);
+
+}
