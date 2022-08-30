@@ -11,6 +11,11 @@ register_nav_menus(
     ]
 );
 
+// Add image sizes
+add_image_size('small_image', 500, 250, true);
+
+add_theme_support( 'post-thumbnails' );
+
 // Team Members
 function team_members()
 {
@@ -57,8 +62,6 @@ function custom_excerpt_length( $length ) {
 	$length = 25;
 	return $length;
 }
-
-
 
 // Action secret page
 add_action('template_redirect', 'members_only');

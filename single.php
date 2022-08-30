@@ -16,7 +16,7 @@ get_header();
 
 			<!-- <?php
 			// echo esc_html( get_template_part( 'template-parts/metabox-details' ) );
-			?>  --> 
+			?>  -->
 			<div>
 				<?php the_content(); ?>
 			</div>

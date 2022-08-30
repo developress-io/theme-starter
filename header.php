@@ -17,7 +17,6 @@
 			[
 					'theme_location' => 'main-menu',
 					'menu'           => 'main-menu',
-					'menu_class'     => 'footer-menu',
 	]
 );
 	?>
