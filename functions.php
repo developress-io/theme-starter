@@ -8,13 +8,20 @@ register_nav_menus(
 	[
 		'main-menu' => __( 'My Custom Main Menu' ),
 		'footer-menu' => __( 'My Custom Footer Menu' ),
-    ]
+	]
 );
 
 // Add image sizes
 add_image_size('small_image', 500, 250, true);
 
-add_theme_support( 'post-thumbnails' );
+// Add featured image support
+function addThumbnail() {
+
+	add_theme_support( 'post-thumbnails' );
+}
+add_action('after_setup_theme', 'addThumbnail');
+
+
 
 // Team Members
 function team_members()
@@ -59,7 +66,7 @@ function department_taxonomy()
 // Filter excerpt length
 add_filter('excerpt_length', 'custom_excerpt_length');
 function custom_excerpt_length( $length ) {
-	$length = 25;
+	$length = 30;
 	return $length;
 }
 
