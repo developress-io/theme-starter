@@ -1,0 +1,144 @@
+@use "sass:math";
+.container-fluid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw;
+  max-width: 1400px;
+  margin: 0 1rem;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+h1,
+.h1 {
+  font-family: var(--font-monospace);
+  font-weight: bold;
+}
+
+h2,
+.h2 {
+  font-family: var(--font-monospace);
+  font-weight: bold;
+}
+
+h2__link,
+.h2__link {
+  text-decoration: none;
+  margin-right: 2rem;
+  position: relative;
+  display: block;
+}
+
+h3,
+.h3 {
+  font-family: var(--font-monospace);
+  font-weight: bold;
+}
+
+h4,
+.h4 {
+  font-family: var(--font-monospace);
+  font-weight: bold;
+}
+
+h5,
+.h5 {
+  font-family: var(--font-monospace);
+  font-weight: bold;
+}
+
+h6,
+.h6 {
+  font-family: var(--font-monospace);
+  font-weight: bold;
+}
+
+/**
+* To include fonts please use https://google-webfonts-helper.herokuapp.com/fonts
+* It will generate all fonts and css code which you should place in the project.
+ */
+:root {
+  --font-sans-serif: "font-famil-name-sans-serif";
+  --font-monospace: "font-famil-name-monospace";
+}
+
+:root {
+  --white: #fff;
+}
+
+* {
+  outline: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  font-size: 10px;
+}
+
+body {
+  max-width: 100vw;
+  width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+@media (min-width: 992px) {
+  .nav__mobile-menu, .nav__mobile-container {
+    display: none;
+  }
+  .nav__main-menu {
+    display: initial;
+  }
+}
+
+/**
+Safari hacks
+ */
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+    * {
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+      -webkit-overflow-scrolling: touch;
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+      -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+    }
+    a[href^="tel"] {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
+/*# sourceMappingURL=index.css.map */

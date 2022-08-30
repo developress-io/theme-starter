@@ -6,15 +6,17 @@ get_header();
 		while ( have_posts() ) {
 			the_post();
 			?>
-			<h1>
-				<?php the_title(); ?>
-			</h1>
 			<div>
 				<?php echo wp_get_attachment_image( get_post_thumbnail_id() ); ?>
 			</div>
-			<?php
-			echo esc_html( get_template_part( 'template-parts/metabox-details' ) );
-			?>
+
+			<h1>
+				<?php the_title(); ?>
+			</h1>
+
+			<!-- <?php
+			// echo esc_html( get_template_part( 'template-parts/metabox-details' ) );
+			?>  -->
 			<div>
 				<?php the_content(); ?>
 			</div>

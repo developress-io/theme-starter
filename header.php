@@ -11,6 +11,18 @@
 	?>
 </head>
 
+<header>
+	<?php
+	wp_nav_menu(
+			[
+					'theme_location' => 'main-menu',
+					'menu'           => 'main-menu',
+	]
+);
+	?>
+</header>
+
+
 <body <?php body_class(); ?> style="opacity: 0;">
 <?php
 wp_body_open();
